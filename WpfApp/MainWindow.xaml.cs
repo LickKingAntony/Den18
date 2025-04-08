@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net;
+using Newtonsoft.Json;
 
 namespace WpfApp
 {
@@ -24,6 +27,10 @@ namespace WpfApp
         public MainWindow()
         {
             InitializeComponent();
+            var client = new WebClient();
+            var response = client.DownloadString("http://127.0.0.1:63450/api/hotels");
+            CurrentHotels = JsonConvert.DeserializeObject<List<Hotel>>(response);
+            DataContext = this;
         }
     }
 }

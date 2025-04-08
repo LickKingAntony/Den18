@@ -94,5 +94,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+	<ItemGroup>
+		<Reference Include="Newtonsoft.Json">
+			<HintPath>C:\Users\Shadow\Desktop\d18\d18\Newtonsoft.Json.dll</HintPath>
+		</Reference>
+	</ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
